@@ -3,6 +3,7 @@
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ListingController;
 
 /*
@@ -22,7 +23,7 @@ index - Show all listings                    ✅
 show - Show all listing                      ✅
 create - Show form to create new listing     ✅
 store - Store new listing                    ✅
-edit - Show form to edit listing
+edit - Show form to edit listing             ✅
 update - Update listing
 destroy - Delete listing
 */
@@ -36,8 +37,17 @@ Route::get('/listings/create', [ListingController::class, 'create']);
 // Store New Listing
 Route::POST('/listings/', [ListingController::class, 'store']);
 
+// Show Edit Form
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 
+// Update Listing
+Route::put('/listings/{listing}', [ListingController::class, 'update']);
 
+// Delete Listing
+Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
+
+// Show Register Create Form
+Route::get('/register', [UserController::class, 'create']);
 
 
 

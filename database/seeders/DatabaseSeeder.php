@@ -42,6 +42,6 @@ class DatabaseSeeder extends Seeder
         //     'description' => 'Lorem'
         // ]);
 
-        Listing::factory(6)->create();
+        Listing::factory(30)->create();
     }
 }
