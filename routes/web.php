@@ -43,6 +43,9 @@ Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->midd
 // Update Listing
 Route::put('/listings/{listing}', [ListingController::class, 'update'])->middleware('auth');
 
+// Manage Listing
+Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
+
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
@@ -63,3 +66,4 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 
 // Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate'])->middleware('guest');
+
